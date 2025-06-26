@@ -1,35 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Heading } from './components/Heading';
 
-function App() {
-  const [count, setCount] = useState(0)
+import { TimerIcon } from 'lucide-react';
+
+import './styles/theme.css';
+import './styles/global.css';
+
+export function App() {
+  console.log('oi');
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+      <Heading>
+        Olá, mundo!
+        <button>
+          <TimerIcon />
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+      </Heading>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto omnis
+        voluptatum maiores ducimus molestiae tempora fuga adipisci soluta enim,
+        velit quod a deleniti suscipit non nihil eaque. Quis, adipisci
+        similique!
       </p>
     </>
-  )
+  );
 }
-
-export default App
