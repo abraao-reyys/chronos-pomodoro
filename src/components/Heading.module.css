@@ -1,6 +1,25 @@
-.heading {
+.header {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.header__logo {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 2.4rem;
+  gap: 0.4rem;
+}
+
+.header__icon {
+  height: 64px;
+  width: 64px;
+
+  color: var(--primary);
+}
+
+.header__text {
+  color: var(--primary);
+  font-size: 4.2rem;
+  font-weight: 700;
 }
