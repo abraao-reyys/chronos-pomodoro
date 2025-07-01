@@ -1,0 +1,20 @@
+.nav__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1.2rem;
+
+  color: var(--text-over-primary);
+
+  background-color: var(--primary);
+
+  border: 0;
+  border-radius: 0.8rem;
+
+  cursor: pointer;
+}
+
+.nav__button:hover {
+  background-color: var(--link-hover);
+}

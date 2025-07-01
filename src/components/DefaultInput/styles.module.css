@@ -1,0 +1,33 @@
+.default-input {
+  height: 4rem;
+  width: 24rem;
+
+  color: var(--text-default);
+  text-align: center;
+  font-size: 1.8rem;
+
+  background: transparent;
+
+  border: 0.2rem solid transparent;
+  border-bottom: 0.2rem solid var(--primary);
+  outline: none;
+
+  transition: all 0.2s ease;
+}
+
+.default-input::placeholder {
+  color: var(--gray-400);
+  font-style: italic;
+  font-size: 1.4rem;
+}
+
+.default-input:focus {
+  border: 0.2rem solid var(--primary);
+  border-radius: 1rem;
+}
+
+.default-input:disabled {
+  color: var(--text-muted);
+
+  border-bottom: 0.2rem solid var(--disabled);
+}

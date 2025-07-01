@@ -1,0 +1,25 @@
+.task-form__cycles {
+  display: flex;
+  gap: 0.8rem;
+
+  .task-form__cycle {
+    height: 2rem;
+    width: 2rem;
+
+    border-radius: 50%;
+
+    background-color: white;
+  }
+
+  .cycle--pomodori {
+    background-color: var(--warning);
+  }
+
+  .cycle--pause {
+    background-color: var(--primary);
+  }
+
+  .cycle--high-pause {
+    background-color: var(--info);
+  }
+}
