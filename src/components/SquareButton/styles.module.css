@@ -13,8 +13,10 @@
   border-radius: 0.8rem;
 
   cursor: pointer;
+
+  transition: filter 0.3s ease;
 }
 
 .nav__button:hover {
-  background-color: var(--link-hover);
+  filter: brightness(80%);
 }
