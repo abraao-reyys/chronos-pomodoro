@@ -15,7 +15,11 @@ import { SquareButton } from '../SquareButton';
 type AvaliableThemes = 'dark' | 'light';
 
 export function Heading() {
-  const [theme, setTheme] = useState<AvaliableThemes>('dark');
+  const [theme, setTheme] = useState<AvaliableThemes>(() => {
+    const storageTheme =
+      (localStorage.getItem('theme') as AvaliableThemes) || 'dark';
+    return storageTheme;
+  });
   const icon = theme === 'dark' ? <SunIcon /> : <MoonIcon />;
 
   function handleThemeChange(
@@ -31,6 +35,7 @@ export function Heading() {
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
   }, [theme]);
 
   return (
