@@ -1,6 +1,7 @@
 import { Cycles } from '../../components/Cycles';
 import { DefaultButton } from '../../components/DefaultButton';
 import { DefaultInput } from '../../components/DefaultInput';
+import { useTaskcontext } from '../../contexts/TaskContext/useTaskContext';
 import { MainTemplate } from '../../templates/MainTemplate';
 
 import styles from './styles.module.css';
@@ -8,10 +9,13 @@ import styles from './styles.module.css';
 import { CirclePlayIcon } from 'lucide-react';
 
 export function Home() {
+  const { state } = useTaskcontext();
   return (
     <MainTemplate>
       <div className={styles['main__content']}>
-        <div className={styles['time-display']}>09:38</div>
+        <div className={styles['time-display']}>
+          {state.formattedSecondsRemaining}
+        </div>
         <form className={styles['task-form']} action='/'>
           <div className={styles['task-form__field']}>
             <label className='task-form__label' htmlFor='inameTask'>
