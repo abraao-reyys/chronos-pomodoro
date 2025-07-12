@@ -3,6 +3,7 @@ import { DefaultButton } from '../../components/DefaultButton';
 import { DefaultInput } from '../../components/DefaultInput';
 import { useTaskcontext } from '../../contexts/TaskContext/useTaskContext';
 import { MainTemplate } from '../../templates/MainTemplate';
+import { useRef } from 'react';
 
 import styles from './styles.module.css';
 
@@ -10,13 +11,22 @@ import { CirclePlayIcon } from 'lucide-react';
 
 export function Home() {
   const { state } = useTaskcontext();
+  const taskNameInput = useRef<HTMLInputElement>(null);
+
+  function handleCreateNewTask(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+  }
   return (
     <MainTemplate>
       <div className={styles['main__content']}>
         <div className={styles['time-display']}>
           {state.formattedSecondsRemaining}
         </div>
-        <form className={styles['task-form']} action='/'>
+        <form
+          onSubmit={handleCreateNewTask}
+          className={styles['task-form']}
+          action='/'
+        >
           <div className={styles['task-form__field']}>
             <label className='task-form__label' htmlFor='inameTask'>
               task
@@ -26,6 +36,7 @@ export function Home() {
               name='name-task'
               id='inameTask'
               placeholder='Digite algo'
+              ref={taskNameInput}
             />
           </div>
           <div className={styles['task-form__field']}>Foque por 25min</div>
