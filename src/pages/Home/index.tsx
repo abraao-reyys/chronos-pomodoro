@@ -10,10 +10,16 @@ import type { TaskModel } from '../../models/TaskModel';
 import styles from './styles.module.css';
 
 import { CirclePlayIcon } from 'lucide-react';
+import { getNextCycle } from '../../utils/getNextCycle';
+import { getNextCycleType } from '../../utils/getNextCycleType';
+import { getFormattedSecondsRemaining } from '../../utils/getFormattedSecondsRemaining';
 
 export function Home() {
   const { state, setState } = useTaskcontext();
   const taskNameInput = useRef<HTMLInputElement>(null);
+
+  const nextCycle = getNextCycle(state.currentCycle);
+  const nextCycleType = getNextCycleType(nextCycle);
 
   function handleCreateNewTask(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -33,20 +39,21 @@ export function Home() {
       startDate: Date.now(),
       completeDate: null,
       interruptDate: null,
-      duration: 1,
-      type: 'pomodori',
+      duration: state.config[nextCycleType],
+      type: nextCycleType,
     };
 
     const secondsRemaining = newTask.duration * 60;
+    const formattedSecondsRemaining = getFormattedSecondsRemaining(secondsRemaining);
 
     setState(prevState => {
       return {
         ...prevState,
         config: { ...prevState.config },
         activeTask: newTask,
-        currentCycle: 1, //conferir
-        secondsRemaining, //conferir
-        formattedSecondsRemaining: '00:00', //conferir
+        currentCycle: nextCycle,
+        secondsRemaining,
+        formattedSecondsRemaining, //conferir
         tasks: [...prevState.tasks, newTask],
       };
     });
