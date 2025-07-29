@@ -19,7 +19,7 @@
     background-color: var(--primary);
   }
 
-  .cycle--high-pause {
+  .cycle--highPause {
     background-color: var(--info);
   }
 }
