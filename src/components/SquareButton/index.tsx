@@ -10,7 +10,6 @@ export function SquareButton({
   buttonLink,
   ...props
 }: SquareButtonProps) {
-  console.log(buttonLink);
   return (
     <>
       <a href={buttonLink} {...props}>
