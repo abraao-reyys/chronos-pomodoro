@@ -11,7 +11,7 @@ import {
 import styles from './styles.module.css';
 
 import { SquareButton } from '../SquareButton';
-import { Link } from 'react-router';
+import { RouterLink } from '../RouterLink';
 
 type AvaliableThemes = 'dark' | 'light';
 
@@ -41,12 +41,12 @@ export function Heading() {
 
   return (
     <header className={`${styles.header} container`}>
-      <Link to='/'>
+      <RouterLink to='/'>
         <div className={styles.header__logo}>
           <TimerIcon className={styles.header__icon} />
           <div className={styles.header__text}>Chronos</div>
         </div>
-      </Link>
+      </RouterLink>
       <nav className={styles.nav}>
         <SquareButton
           buttonLink='/'
@@ -56,14 +56,14 @@ export function Heading() {
           <HouseIcon />
         </SquareButton>
         <SquareButton
-          buttonLink='#2'
+          buttonLink='/history'
           aria-label='Ver histórico'
           title='Ver histórico'
         >
           <HistoryIcon />
         </SquareButton>
         <SquareButton
-          buttonLink='#3'
+          buttonLink='/settings'
           aria-label='Configurações'
           title='Configurações'
         >

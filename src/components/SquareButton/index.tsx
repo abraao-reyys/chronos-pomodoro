@@ -1,5 +1,5 @@
-import { Link } from 'react-router';
 import styles from './styles.module.css';
+import { RouterLink } from '../RouterLink';
 
 type SquareButtonProps = {
   children: React.ReactNode;
@@ -13,9 +13,9 @@ export function SquareButton({
 }: SquareButtonProps) {
   return (
     <>
-      <Link to={buttonLink} {...props}>
+      <RouterLink to={buttonLink} {...props}>
         <button className={styles.nav__button}>{children}</button>
-      </Link>
+      </RouterLink>
     </>
   );
 }
