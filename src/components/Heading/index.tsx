@@ -11,6 +11,7 @@ import {
 import styles from './styles.module.css';
 
 import { SquareButton } from '../SquareButton';
+import { Link } from 'react-router';
 
 type AvaliableThemes = 'dark' | 'light';
 
@@ -40,15 +41,15 @@ export function Heading() {
 
   return (
     <header className={`${styles.header} container`}>
-      <a href='#'>
+      <Link to='/'>
         <div className={styles.header__logo}>
           <TimerIcon className={styles.header__icon} />
           <div className={styles.header__text}>Chronos</div>
         </div>
-      </a>
+      </Link>
       <nav className={styles.nav}>
         <SquareButton
-          buttonLink='#1'
+          buttonLink='/'
           aria-label='Ir para a Home'
           title='Ir para a Home'
         >

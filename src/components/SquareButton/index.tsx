@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import styles from './styles.module.css';
 
 type SquareButtonProps = {
@@ -12,9 +13,9 @@ export function SquareButton({
 }: SquareButtonProps) {
   return (
     <>
-      <a href={buttonLink} {...props}>
+      <Link to={buttonLink} {...props}>
         <button className={styles.nav__button}>{children}</button>
-      </a>
+      </Link>
     </>
   );
 }
