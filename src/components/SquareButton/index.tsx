@@ -3,7 +3,7 @@ import { RouterLink } from '../RouterLink';
 
 type SquareButtonProps = {
   children: React.ReactNode;
-  buttonLink: string;
+  buttonLink?: string;
 } & React.ComponentProps<'a'>;
 
 export function SquareButton({
@@ -13,7 +13,7 @@ export function SquareButton({
 }: SquareButtonProps) {
   return (
     <>
-      <RouterLink to={buttonLink} {...props}>
+      <RouterLink to={buttonLink || ''} {...props}>
         <button className={styles.nav__button}>{children}</button>
       </RouterLink>
     </>

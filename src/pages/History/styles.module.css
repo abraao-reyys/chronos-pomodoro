@@ -1,0 +1,58 @@
+.main__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+
+  width: 100%;
+}
+
+.generic-html h1 {
+  font-size: 3.2rem;
+  text-align: center;
+  margin-bottom: 1.6rem;
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.trash-button button {
+  background-color: var(--error);
+}
+
+.responsive-table {
+  width: 100%;
+  max-width: 64rem;
+  overflow-x: auto;
+  border-radius: 0.8rem;
+}
+
+.responsive-table table {
+  width: 64rem;
+  font-size: 1.6rem;
+  border-collapse: collapse;
+}
+
+.responsive-table th {
+  background-color: var(--gray-600);
+}
+
+.responsive-table td {
+  background-color: var(--gray-800);
+}
+
+.responsive-table th, .responsive-table td {
+  border-bottom: 0.2rem solid var(--gray-700);
+  text-align: left;
+  padding: 1.6rem;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
