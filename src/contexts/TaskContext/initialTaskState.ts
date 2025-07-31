@@ -7,8 +7,8 @@ export const initialTaskState: TaskStateModel = {
   activeTask: null,
   currentCycle: 0,
   config: {
-    pomodori: 25,
-    pause: 5,
-    highPause: 15,
+    pomodori: 1,
+    pause: 1,
+    highPause: 1,
   },
 };
