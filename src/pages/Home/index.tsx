@@ -14,6 +14,7 @@ import styles from './styles.module.css';
 
 import { CirclePlayIcon, CircleStopIcon } from 'lucide-react';
 import { Tips } from '../../components/Tips';
+import { toastifyAdapter } from '../../adapters/toastifyAdapter';
 
 export function Home() {
   const { state, dispatch } = useTaskcontext();
@@ -25,12 +26,14 @@ export function Home() {
   function handleCreateNewTask(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
+    toastifyAdapter.dismiss();
+
     if (taskNameInput === null) return;
 
     const taskName = taskNameInput.current?.value.trim() ?? '';
 
     if (!taskName) {
-      alert('Digite o nome da tarefa!');
+      toastifyAdapter.warn('Digite o nome da tarefa!');
       return;
     }
 
@@ -45,10 +48,16 @@ export function Home() {
     };
 
     dispatch({ type: TaskActionTypes.START_TASK, payload: newTask });
+    
+    toastifyAdapter.sucess('Tarefa iniciada');
   }
 
   function handleInterruptTask() {
+    toastifyAdapter.dismiss();
+
     dispatch({ type: TaskActionTypes.INTERRUPT_TASK });
+
+    toastifyAdapter.error('Tarefa interrompida')
   }
 
   return (
