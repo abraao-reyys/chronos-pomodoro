@@ -19,6 +19,7 @@ import { toastifyAdapter } from '../../adapters/toastifyAdapter';
 export function Home() {
   const { state, dispatch } = useTaskcontext();
   const taskNameInput = useRef<HTMLInputElement>(null);
+  const lastTaskName = state.tasks[state.tasks.length - 1]?.name || '';
 
   const nextCycle = getNextCycle(state.currentCycle);
   const nextCycleType = getNextCycleType(nextCycle);
@@ -82,6 +83,7 @@ export function Home() {
               placeholder='Digite algo'
               ref={taskNameInput}
               disabled={!!state.activeTask}
+              defaultValue={lastTaskName}
             />
           </div>
           <div className={styles['task-form__field']}>
