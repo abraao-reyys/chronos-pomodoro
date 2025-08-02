@@ -4,6 +4,8 @@
 
 **Chronos Pomodoro** é uma **SPA (Single Page Application)** desenvolvida com **React + TypeScript + Vite**, que implementa um timer baseado na técnica **Pomodoro**. A aplicação permite ao usuário gerenciar seus ciclos de produtividade, visualizar históricos, configurar os tempos e entender melhor sobre a metodologia.
 
+Embora aparente ser uma aplicação simples, o projeto incorpora diversos conceitos importantes, como **gerenciamento de estado**, **tipagem**, **componentização**, **modularização** e **roteamento**. Cada funcionalidade foi pensada como uma oportunidade para aprofundar o conhecimento em React e TypeScript, explorando boas práticas no desenvolvimento moderno de aplicações web.
+
 ## Justificativa
 
 > Após desenvolver alguns projetos com Vue.js e Nuxt.js, como o meu [Portfólio 2.0](https://portfolio-profissional-2.netlify.app/) e o [Projeto de Residência I](https://github.com/Gabriellin1227/dubyapp-squad1), notei que no React eu teria maior versatilidade na construção de minhas aplicações, bem como na organização da sua estrutura. Sendo assim, iniciei este projeto para fazer essa transição de tecnologia.
