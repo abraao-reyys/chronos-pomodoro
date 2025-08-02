@@ -1,69 +1,93 @@
-# React + TypeScript + Vite
+![Favicon do projeto](/public/images/favicon/web-app-manifest-192x192.png)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Chronos Pomodoro
 
-Currently, two official plugins are available:
+**Chronos Pomodoro** é uma **SPA (Single Page Application)** desenvolvida com **React + TypeScript + Vite**, que implementa um timer baseado na técnica **Pomodoro**. A aplicação permite ao usuário gerenciar seus ciclos de produtividade, visualizar históricos, configurar os tempos e entender melhor sobre a metodologia.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Justificativa
 
-## Expanding the ESLint configuration
+> Após desenvolver alguns projetos com Vue.js e Nuxt.js, como o meu [Portfólio 2.0](https://portfolio-profissional-2.netlify.app/) e o [Projeto de Residência I](https://github.com/Gabriellin1227/dubyapp-squad1), notei que no React eu teria maior versatilidade na construção de minhas aplicações, bem como na organização da sua estrutura. Sendo assim, iniciei este projeto para fazer essa transição de tecnologia.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+> Confesso que foi um tanto desafiador, mas pude fazer boas comparações com a forma que o Vue trabalha — conhecimento prévio que me ajudou deveras. Acredito que fiz a escolha certa. Por isso, continuarei elevando o nível de dificuldade desses desafios, onde começarei a lidar com Next, Nest, entre outras tecnologias.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Tecnologias
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### Base
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+* [React](https://react.dev/)
+* [TypeScript](https://www.typescriptlang.org/)
+* [Vite](https://vitejs.dev/)
+* HTML5
+* CSS3
+* JavaScript (ES6+)
+
+### Dependências e ferramentas
+
+* [React Router](https://reactrouter.com/)
+* [date-fns](https://date-fns.org/)
+* [Lucide React](https://lucide.dev/)
+* [React Toastify](https://fkhadra.github.io/react-toastify/)
+* [ESLint](https://eslint.org/)
+
+## Links de Produção
+
+| Serviço | URL                                                             |
+| ------- | --------------------------------------------------------------- |
+| Deploy  | [chronos-timer.netlify.app](https://chronos-timer.netlify.app/) |
+
+## Rotas da Aplicação
+
+| Caminho            | Descrição                                                     |
+| ------------------ | ------------------------------------------------------------- |
+| `/`                | Página principal com o timer Pomodoro                         |
+| `/history/`        | Histórico de ciclos realizados                                |
+| `/settings/`       | Configurações dos tempos (Pomodoro, Pausa curta, Pausa longa) |
+| `/about-pomodoro/` | Informações sobre a técnica Pomodoro                          |
+| `*`                | Rota não encontrada (Not Found)                               |
+
+## Como Executar Localmente
+
+### 1. Clonar o repositório
+
+```bash
+git clone https://github.com/seu-usuario/seu-repositorio.git
+cd seu-repositorio
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Instalar as dependências
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+### 3. Rodar o servidor de desenvolvimento
+
+```bash
+npm run dev
+```
+
+O projeto estará disponível em `http://localhost:5173/`.
+
+## Funcionalidades
+
+* Timer com contagem para ciclos Pomodoro, pausas curtas e longas
+* Histórico dos ciclos realizados
+* Configurações de tempo personalizadas
+* Feedback visual e sonoro com notificações
+* Interface simples e responsiva
+* Informações sobre a técnica Pomodoro
+* Estado salvo no Local Storage
+* Tema escuro/claro
+
+## Possíveis Melhorias Futuras
+
+* Estatísticas de produtividade
+* Suporte a múltiplos idiomas
+
+## Autor
+
+[@abraao-reyys](https://github.com/abraao-reyys)
+
+## Licença
+
+Este projeto está licenciado sob a MIT License.
